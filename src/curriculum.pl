@@ -1,0 +1,91 @@
+% disciplina(Nome, Tipo, Creditos, SemestreSugerido)
+ 
+% primeiro período
+disciplina(algoritmos_1, obrigatoria, 4, 1).
+disciplina(calculo_1, obrigatoria, 4, 1).
+disciplina(introducao_cs, obrigatoria, 2, 1).
+disciplina(geometria_analitica, obrigatoria, 4, 1).
+
+% segundo período
+disciplina(algoritmos_2, obrigatoria, 4, 2).
+disciplina(calculo_2, obrigatoria, 4, 2).
+disciplina(circuitos_digitais, obrigatoria, 4, 2).
+disciplina(algebra_linear, obrigatoria, 4, 2).
+
+% terceiro período
+disciplina(estrutura_de_dados, obrigatoria, 4, 3).
+disciplina(organizacao_computadores, obrigatoria, 4, 3).
+disciplina(calculo_3, obrigatoria, 4, 3).
+
+% quarto período
+disciplina(paradigmas_programacao, obrigatoria, 4, 4).
+disciplina(sistemas_operacionais, obrigatoria, 4, 4).
+disciplina(banco_de_dados, obrigatoria, 4, 4).
+
+% quinto período
+disciplina(compiladores, obrigatoria, 4, 5).
+disciplina(redes_de_computadores, obrigatoria, 4, 5).
+disciplina(engenharia_de_software, obrigatoria, 4, 5).
+
+% sexto período
+disciplina(inteligencia_artificial, eletiva, 4, 6).
+disciplina(seguranca_da_informacao, eletiva, 4, 6).
+disciplina(desenvolvimento_web, eletiva, 4, 6).
+disciplina(computacao_grafica, eletiva, 4, 6).
+
+
+% prerequisito(Disciplina, Prerequisito)
+prerequisito(algoritmos_2, algoritmos_1).
+prerequisito(estrutura_de_dados, algoritmos_2).
+prerequisito(paradigmas_programacao, estrutura_de_dados).
+prerequisito(compiladores, paradigmas_programacao).
+prerequisito(calculo_2, calculo_1).
+prerequisito(calculo_3, calculo_2).
+prerequisito(algebra_linear, geometria_analitica).
+prerequisito(organizacao_computadores, circuitos_digitais).
+prerequisito(sistemas_operacionais, organizacao_computadores).
+prerequisito(banco_de_dados, estrutura_de_dados).
+prerequisito(redes_de_computadores, sistemas_operacionais).
+prerequisito(engenharia_de_software, banco_de_dados).
+prerequisito(inteligencia_artificial, estrutura_de_dados).
+prerequisito(seguranca_da_informacao, redes_de_computadores).
+prerequisito(desenvolvimento_web, banco_de_dados).
+prerequisito(computacao_grafica, estrutura_de_dados).
+prerequisito(computacao_grafica, algebra_linear).
+
+
+% cursou(Aluno, Disciplina)
+cursou(lucas, algoritmos_1).
+cursou(lucas, calculo_1).
+cursou(lucas, introducao_cs).
+cursou(lucas, geometria_analitica).
+cursou(lucas, algoritmos_2).
+cursou(lucas, calculo_2).
+cursou(lucas, circuitos_digitais).
+cursou(lucas, algebra_linear).
+cursou(lucas, estrutura_de_dados).
+cursou(lucas, organizacao_computadores).
+cursou(lucas, calculo_3).
+cursou(lucas, paradigmas_programacao).
+cursou(lucas, sistemas_operacionais).
+cursou(lucas, banco_de_dados).
+cursou(lucas, compiladores).
+cursou(lucas, redes_de_computadores).
+cursou(lucas, inteligencia_artificial).
+
+cursou(beatriz, algoritmos_1).
+cursou(beatriz, calculo_1).
+cursou(beatriz, introducao_cs).
+cursou(beatriz, geometria_analitica).
+cursou(beatriz, algoritmos_2).
+cursou(beatriz, calculo_2).
+cursou(beatriz, circuitos_digitais).
+cursou(beatriz, algebra_linear).
+cursou(beatriz, estrutura_de_dados).
+cursou(beatriz, organizacao_computadores).
+cursou(beatriz, calculo_3).
+
+cursou(carlos, algoritmos_1).
+cursou(carlos, introducao_cs).
+cursou(carlos, geometria_analitica).
+cursou(carlos, circuitos_digitais).
