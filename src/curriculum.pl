@@ -110,9 +110,5 @@ cursou(carlos, introducao_cs).
 cursou(carlos, geometria_analitica).
 cursou(carlos, circuitos_digitais).
 
-% Aluno sem histórico para validar a trilha completa do zero
-% (usado como exemplo de planejamento a partir do início do curso).
-
-% 24 disciplinas cadastradas.
-% pré-requisitos de compiladores -> paradigmas_programacao ->
-% estrutura_de_dados -> algoritmos_2 -> algoritmos_1 tem profundidade 5.
+% 25 disciplinas cadastradas.
+% pré-requisitos de compiladores -> paradigmas_programacao -> estrutura_de_dados -> algoritmos_2 -> algoritmos_1 tem profundidade 5.

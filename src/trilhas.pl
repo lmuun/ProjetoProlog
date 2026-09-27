@@ -1,5 +1,3 @@
-:- ensure_loaded('elegibilidade.pl').
-
 % Camada 3: fecho transitivo e geração de trilhas.
 
 % prerequisito_transitivo(Disciplina, Ancestral): qualquer pré-requisito direto ou indireto.
@@ -41,7 +39,7 @@ candidatos_semestre(Aluno, Disponiveis, Selecionadas, Candidatos) :-
 
 % gerar_semestre(Candidatos, Limite, Semestre): escolhe um subconjunto de candidatos
 % cujo somatório de créditos não ultrapassa o limite informado. A escolha é feita por
-% backtracking, permitindo enumerar múltiplas trilhas válidas.
+% backtracking, permitindo enumerar multiplas trilhas válidas.
 gerar_semestre([], _, []).
 
 gerar_semestre([Disciplina | Resto], Limite, [Disciplina | Semestre]) :-

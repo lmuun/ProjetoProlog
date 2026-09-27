@@ -1,4 +1,7 @@
-:- consult('src/main.pl').
+:- prolog_load_context(directory, TestDir),
+   file_directory_name(TestDir, ProjectDir),
+   directory_file_path(ProjectDir, 'src/main.pl', MainFile),
+   ensure_loaded(MainFile).
 
 % Teste 1: disciplina do semestre sugerido
 % Resultado esperado: [algebra_linear, algoritmos_2, calculo_2, circuitos_digitais]
