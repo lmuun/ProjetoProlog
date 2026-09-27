@@ -1,38 +1,50 @@
+:- dynamic disciplina/4.
+:- dynamic prerequisito/2.
+:- dynamic cursou/2.
+
+% Camada 1: base de fatos do currículo e do histórico dos alunos.
+
 % disciplina(Nome, Tipo, Creditos, SemestreSugerido)
- 
-% primeiro período
+
+% Primeiro período
+
 disciplina(algoritmos_1, obrigatoria, 4, 1).
 disciplina(calculo_1, obrigatoria, 4, 1).
 disciplina(introducao_cs, obrigatoria, 2, 1).
 disciplina(geometria_analitica, obrigatoria, 4, 1).
 
-% segundo período
+% Segundo período
 disciplina(algoritmos_2, obrigatoria, 4, 2).
 disciplina(calculo_2, obrigatoria, 4, 2).
 disciplina(circuitos_digitais, obrigatoria, 4, 2).
 disciplina(algebra_linear, obrigatoria, 4, 2).
 
-% terceiro período
+% Terceiro período
 disciplina(estrutura_de_dados, obrigatoria, 4, 3).
 disciplina(organizacao_computadores, obrigatoria, 4, 3).
 disciplina(calculo_3, obrigatoria, 4, 3).
 
-% quarto período
+% Quarto período
 disciplina(paradigmas_programacao, obrigatoria, 4, 4).
 disciplina(sistemas_operacionais, obrigatoria, 4, 4).
 disciplina(banco_de_dados, obrigatoria, 4, 4).
 
-% quinto período
+% Quinto período
 disciplina(compiladores, obrigatoria, 4, 5).
 disciplina(redes_de_computadores, obrigatoria, 4, 5).
 disciplina(engenharia_de_software, obrigatoria, 4, 5).
 
-% sexto período
+% Sexto período
 disciplina(inteligencia_artificial, eletiva, 4, 6).
-disciplina(seguranca_da_informacao, eletiva, 4, 6).
+disciplina(seguranca_informacao, eletiva, 4, 6).
 disciplina(desenvolvimento_web, eletiva, 4, 6).
 disciplina(computacao_grafica, eletiva, 4, 6).
 
+% Disciplinas extras
+disciplina(analise_algoritmos, obrigatoria, 4, 6).
+disciplina(automatos, obrigatoria, 4, 7).
+disciplina(teoria_computacao, obrigatoria, 4, 7).
+disciplina(projeto_integrador, obrigatoria, 6, 8).
 
 % prerequisito(Disciplina, Prerequisito)
 prerequisito(algoritmos_2, algoritmos_1).
@@ -48,13 +60,18 @@ prerequisito(banco_de_dados, estrutura_de_dados).
 prerequisito(redes_de_computadores, sistemas_operacionais).
 prerequisito(engenharia_de_software, banco_de_dados).
 prerequisito(inteligencia_artificial, estrutura_de_dados).
-prerequisito(seguranca_da_informacao, redes_de_computadores).
+prerequisito(seguranca_informacao, redes_de_computadores).
 prerequisito(desenvolvimento_web, banco_de_dados).
 prerequisito(computacao_grafica, estrutura_de_dados).
 prerequisito(computacao_grafica, algebra_linear).
-
+prerequisito(analise_algoritmos, paradigmas_programacao).
+prerequisito(automatos, calculo_3).
+prerequisito(teoria_computacao, automatos).
+prerequisito(projeto_integrador, engenharia_de_software).
+prerequisito(projeto_integrador, desenvolvimento_web).
 
 % cursou(Aluno, Disciplina)
+% Aluno adiantado: Lucas
 cursou(lucas, algoritmos_1).
 cursou(lucas, calculo_1).
 cursou(lucas, introducao_cs).
@@ -72,7 +89,9 @@ cursou(lucas, banco_de_dados).
 cursou(lucas, compiladores).
 cursou(lucas, redes_de_computadores).
 cursou(lucas, inteligencia_artificial).
+cursou(lucas, seguranca_informacao).
 
+% Aluno no ritmo normal: Beatriz
 cursou(beatriz, algoritmos_1).
 cursou(beatriz, calculo_1).
 cursou(beatriz, introducao_cs).
@@ -85,7 +104,15 @@ cursou(beatriz, estrutura_de_dados).
 cursou(beatriz, organizacao_computadores).
 cursou(beatriz, calculo_3).
 
+% Aluno atrasado: Carlos
 cursou(carlos, algoritmos_1).
 cursou(carlos, introducao_cs).
 cursou(carlos, geometria_analitica).
 cursou(carlos, circuitos_digitais).
+
+% Aluno sem histórico para validar a trilha completa do zero
+% (usado como exemplo de planejamento a partir do início do curso).
+
+% 24 disciplinas cadastradas.
+% pré-requisitos de compiladores -> paradigmas_programacao ->
+% estrutura_de_dados -> algoritmos_2 -> algoritmos_1 tem profundidade 5.
