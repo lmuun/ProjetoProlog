@@ -1,9 +1,10 @@
+:- consult('/curriculum.pl'). % Remover depois, só precisa por enquanto pro vscode nn gritar comigo
+
 % prerequisitos_ok(Aluno, Disciplina) : verdadeiro se todos os pré-requisitos diretos 
 % já foram cursados
 
 prerequisitos_ok(Aluno, Disciplina) :-
-    disciplina(Disciplina, _, _, _),
-    \+ (prerequisito(Disciplina, Pre), \+ cursou(Aluno, Pre)).
+    forall(prerequisito(Disciplina, Pre), cursou(Aluno, Pre)).
 
 % pode_cursar(Aluno, Disciplina) : elegível e ainda não cursada (usa negação por falha)
 
